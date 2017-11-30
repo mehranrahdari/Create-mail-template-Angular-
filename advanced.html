@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <title>Admin Email Generator</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+   <link rel="stylesheet" href="advanced.css"> </head>
+<script src="advanced.js"></script>
+
+<body ng-app="myShoppingList" ng-cloak ng-controller="myCtrl">
+   <div class="container-fluid text-center">
+      <div class="row content">
+         <div class="col-xs-5 col-sm-4 col-md-3  " style=" margin-top: 50px; ">
+            <ul style=" list-style-type: none; ">
+               <li ng-click="addItem($index)" ng-repeat="x in siteBoutiques"> <img class="col-md-12 img-responsive" src="{{x.img}}" alt="" />
+                  <h6 class="col-md-6">  {{x.title}}</h6>
+                  <h6 class="col-md-6 ">{{x.brnad}}</h6> </li>
+            </ul>
+         </div>
+        
+         <div class="col-xs-7 col-sm-8 col-md-6">
+            <button type="button" class="btn btn-success " data-toggle="modal" data-target="#myModal">Export to mail</button>
+           <span style="  color: red; "> {{errortext}}</span>
+            <ul class="col-md-12" style=" list-style-type: none; ">
+               <li ng-repeat="x in boutiques"> <span ng-click="removeItem($index)" style="cursor:pointer; float: left;" class="w3-right w3-margin-right">×</span> <img class="col-md-12 img-responsive" src="{{x.img}}" alt="" />
+                  <!--<h4 class="col-md-6">  {{x.title}}</h4>
+               <h4 class="col-md-6 ">{{x.brnad}}</h4>
+              </li>--></ul>
+         </div>
+         <div class="col-xs-12 col-sm-12 col-md-3" style=" margin-top: 50px; ">
+            
+            <div class=" ">
+               <label>Enter Link For Image:</label>
+               <input type="text" class="form-control" placeholder="Enter Link For Image" ng-model="addMe.href"> </div>
+               <div class=" ">
+               <label>Enter url Image:</label>
+               <input type="text" class="form-control" placeholder="Enter url Image" ng-model="addMe.img"> </div>
+            <input type="file" name="pic" accept="image/*" />
+            <button  ng-click="addSelectedItem()" class="btn btn-success">Add</button>
+         </div>
+      </div>
+   </div>
+   <!-- Export to mail Modal -->
+   <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog modal-lg">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title"> Export to mail</h4> </div>
+            <div class="modal-body" yahoo bgcolor="#f6f8f1">
+               <table width="100%" bgcolor="#f6f8f1" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td>
+                    <table class="content" align="center" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                            <td>
+                                Hello!
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+
+</html>

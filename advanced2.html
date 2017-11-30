@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <title>Admin Email Generator</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+   <link rel="stylesheet" href="advanced.css"> </head>
+<script src="advanced.js"></script>
+
+<body ng-app="myShoppingList" ng-cloak ng-controller="myCtrl">
+   <div class="container-fluid text-center">
+      <div class="row content">
+         <div class="col-xs-5 col-sm-4 col-md-3  ">
+            <ul style=" list-style-type: none; ">
+               <li ng-click="addItem($index)" ng-repeat="x in siteBoutiques"> <img class="col-md-12 img-responsive" src="{{x.img}}" alt="" />
+                  <h6 class="col-md-6">  {{x.title}}</h6>
+                  <h6 class="col-md-6 ">{{x.brnad}}</h6> </li>
+            </ul>
+         </div>
+        
+         <div class="col-xs-7 col-sm-8 col-md-6">
+            <button type="button" class="btn btn-success " data-toggle="modal" data-target="#myModal">Export to mail</button>
+            <ul class="col-md-12" style=" list-style-type: none; ">
+               <li ng-repeat="x in boutiques"> <span ng-click="removeItem($index)" style="cursor:pointer; float: left;" class="w3-right w3-margin-right">×</span> <img class="col-md-12 img-responsive" src="{{x.img}}" alt="" />
+                  <!--<h4 class="col-md-6">  {{x.title}}</h4>
+               <h4 class="col-md-6 ">{{x.brnad}}</h4>
+              </li>--></ul>
+         </div>
+         <div class="col-xs-12 col-sm-12 col-md-3" style="
+    margin-top: 50px;
+">
+            
+            <div class=" ">
+               <label>Enter Link For Image:</label>
+               <input type="text" class="form-control" placeholder="Enter Link For Image" ng-model="addMe.href"> </div>
+               <div class=" ">
+               <label>Enter url Image:</label>
+               <input type="text" class="form-control" placeholder="Enter url Image" ng-model="addMe.img"> </div>
+            <input type="file" name="pic" accept="image/*" />
+            <button  ng-click="addSelectedItem()" class="btn btn-success">Add</button>
+         </div>
+      </div>
+   </div>
+   <!-- Export to mail Modal -->
+   <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog modal-lg">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title"> Export to mail</h4> </div>
+            <div class="modal-body">
+               <table class="nl-container" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 320px;Margin: 0 auto;background-color: #FFFFFF;width: 100%" cellpadding="0" cellspacing="0">
+                  <tbody>
+                     <tr style="vertical-align: top">
+                        <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
+                           <div style="background-color:#FFFFFF;">
+                              <div style="
+    display: block;
+    text-align: center; font-size: 12px;
+            " class=" ">لطفا برای مشاهده آن در مرورگر خود <a href="#">کلیک</a> کنید </div>
+                              <div style="Margin: 0 auto;min-width: 320px;max-width: 650px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;" class="block-grid two-up ">
+                                 <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
+                                    <div class="col num6" style="min-width: 320px;max-width: 325px;display: table-cell;vertical-align: top;">
+                                       <div style="background-color: transparent; width: 100% !important;">
+                                          <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:20px; padding-bottom:20px; padding-right: 0px; padding-left: 0px;">
+                                             <div align="center" class="img-container center  autowidth " style="padding-right: 0px;  padding-left: 0px;">
+                                                <a href="http://trendera.ir" target="_blank"> <img class="center  autowidth " align="center" border="0" src="http://trendera.ir/resources/images/logo.png" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;width: 100%;max-width: 180px" width="180"> </a>
+                                                <!--[if mso]></td></tr></table><![endif]-->
+                                             </div>
+                                             <!--[if (!mso)&(!IE)]><!-->
+                                          </div>
+                                          <!--<![endif]-->
+                                       </div>
+                                    </div>
+                                    <div class="col num6" style="min-width: 320px;max-width: 325px;display: table-cell;vertical-align: top;">
+                                       <div style="background-color: transparent; width: 100% !important;">
+                                          <!--[if (!mso)&(!IE)]><!-->
+                                          <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:20px; padding-bottom:20px; padding-right: 0px; padding-left: 0px;">
+                                             <div style="color:#6E6F7A;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;line-height:150%; padding-right: 0px; padding-left: 55px; padding-top: 30px; padding-bottom: 0px;">
+                                                <div style="font-size:12px;line-height:18px;color:#6E6F7A;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                                   <p style="margin: 0;font-size: 12px;line-height: 18px;text-align: center"><a style="color:#0000FF;text-decoration: underline;" href="http://trendera.ir/" target="_blank" rel="noopener" data-mce-selected="1">صفحه اصلی</a> &#160;<span style="color: rgb(178, 212, 118); font-size: 12px; line-height: 18px;"> |</span>&#160; &#160;<a style="color:#0000FF;text-decoration: underline;" href="http://trendera.ir/content/contactus" target="_blank" rel="noopener"> تماس با ما</a><span style="color: rgb(178, 212, 118); font-size: 12px; line-height: 18px;">|</span>&#160; <a style="color:#0000FF;text-decoration: underline;" href="http://trendera.ir/content/aboutus" target="_blank" rel="noopener"> درباره ما</a>
+                                                      <br> </p>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <!--<![endif]-->
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div style="background-color:#f0f0f0;">
+                              <div style="Margin: 0 auto;min-width: 320px;max-width: 650px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;" class="block-grid cmscontainer">
+                                 <ul class="col-md-12" style=" list-style-type: none; ">
+                                    <li ng-repeat="x in boutiques">
+                                       <a href="{{x.href}}"><img style="
+    margin-bottom: 10px;
+" class="col-md-12 img-responsive" src="{{x.img}}" alt="" /></a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                           <div style="background-color:#ffffff;">
+                              <div style="Margin: 0 auto;min-width: 320px;max-width: 650px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;" class="block-grid ">
+                                 <div style="border-collapse: collapse;display: table;width: 100%;background-color:transparent;">
+                                    <div class="col num12" style="min-width: 320px;max-width: 650px;display: table-cell;vertical-align: top;">
+                                       <div style="background-color: transparent; width: 100% !important;">
+                                          <!--[if (!mso)&(!IE)]><!-->
+                                          <div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:30px; padding-bottom:30px; padding-right: 0px; padding-left: 0px;">
+                                             <!--<![endif]-->
+                                             <div align="center" style="padding-right: 10px; padding-left: 10px; padding-bottom: 10px;">
+                                                <div style="line-height:10px;font-size:1px">&#160;</div>
+                                                <div style="display: table; max-width:225px;">
+                                                   <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;Margin-right: 5px">
+                                                      <tbody>
+                                                         <tr style="vertical-align: top">
+                                                            <td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
+                                                               <a href="https://www.facebook.com/trendera.ir" title="Facebook" target="_blank"> <img src="http://trendera.ir/resources/images/facebook.png" alt="Facebook" title="Facebook" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important"> </a>
+                                                               <div style="line-height:5px;font-size:1px">&#160;</div>
+                                                            </td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                   <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;Margin-right: 5px">
+                                                      <tbody>
+                                                         <tr style="vertical-align: top">
+                                                            <td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
+                                                               <a href="https://twitter.com/trenderair" title="Twitter" target="_blank"> <img src="http://trendera.ir/resources/images/twitter.png" alt="Twitter" title="Twitter" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important"> </a>
+                                                               <div style="line-height:5px;font-size:1px">&#160;</div>
+                                                            </td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                   <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;Margin-right: 5px">
+                                                      <tbody>
+                                                         <tr style="vertical-align: top">
+                                                            <td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
+                                                               <a href="https://t.me/trendera_ir" title="Telegram" target="_blank"> <img src="http://trendera.ir/resources/images/telegram@2x.png" alt="Telegram" title="Telegram" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important"> </a>
+                                                               <div style="line-height:5px;font-size:1px">&#160;</div>
+                                                            </td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                   <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;Margin-right: 5px">
+                                                      <tbody>
+                                                         <tr style="vertical-align: top">
+                                                            <td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
+                                                               <a href="https://plus.google.com/u/1/101574000698144492436" title="Google+" target="_blank"> <img src="http://trendera.ir/resources/images/googleplus.png" alt="Google+" title="Google+" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important"> </a>
+                                                               <div style="line-height:5px;font-size:1px">&#160;</div>
+                                                            </td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                   <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;Margin-right: 0">
+                                                      <tbody>
+                                                         <tr style="vertical-align: top">
+                                                            <td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
+                                                               <a href="https://www.instagram.com/trendera.ir/" title="Instagram" target="_blank"> <img src="http://trendera.ir/resources/images/instagram@2x.png" alt="Instagram" title="Instagram" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important"> </a>
+                                                               <div style="line-height:5px;font-size:1px">&#160;</div>
+                                                            </td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                </div>
+                                             </div>
+                                             <div style="color:#959595;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;line-height:150%; padding-right: 10px; padding-left: 10px; padding-top: 15px; padding-bottom: 10px;">
+                                                <div style="font-size:12px;line-height:18px;color:#959595;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+                                                   <p style="margin: 0;font-size: 14px;line-height: 21px;text-align: center" dir="rtl">کپی‌رایت © 2017 فروشگاه اینترنتی ترندرا محفوظ میباشد.</p>
+                                                   <p style="margin: 0;font-size: 14px;line-height: 21px;text-align: center" dir="rtl"><span style="color: rgb(128, 128, 128); font-size: 14px; line-height: 21px;"><a style="color:#C7702E;color:#C7702E;text-decoration: underline; color: rgb(128, 128, 128);" href="http://trendera.ir/" target="_blank" rel="noopener">unsubscribe</a></span></p>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <!--<![endif]-->
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+
+</html>
