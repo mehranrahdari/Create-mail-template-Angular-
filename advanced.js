@@ -62,6 +62,13 @@ app.controller("myCtrl", function ($scope) {
         if($scope.addMe.img4!=null){
             $scope.addMe.type=4;
         }
+        if($scope.addMe.img5!=null || $scope.addMe.img6!=null || $scope.addMe.img7!=null){
+            if($scope.isChecked){
+                $scope.addMe.type=6;
+            }else{
+                $scope.addMe.type=5;
+            } 
+        }
         $scope.boutiques.push(angular.copy($scope.addMe));
         $scope.addMe = {};
     }

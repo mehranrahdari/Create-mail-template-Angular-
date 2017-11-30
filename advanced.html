@@ -95,13 +95,13 @@
                         <!-- 2 Left 1 Right Image normal In Row -->
                         <div class="col-md-12" ng-if="x.type==6">
                             <div class="col-xs-3 col-sm-3 col-md-3 padd-0">
-                                <img class="col-md-12 img-responsive padd-0" src="{{x.img8}}" alt="" />
+                                <img class="col-md-12 img-responsive padd-0" src="{{x.img5}}" alt="" />
                             </div>
                             <div class="col-xs-3 col-sm-3 col-md-3 padd-0">
-                                <img class="col-md-12 img-responsive padd-0" src="{{x.img9}}" alt="" />
+                                <img class="col-md-12 img-responsive padd-0" src="{{x.img6}}" alt="" />
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6 padd-0">
-                                <img class="col-md-12 img-responsive padd-0" src="{{x.img10}}" alt="" />
+                                <img class="col-md-12 img-responsive padd-0" src="{{x.img7}}" alt="" />
                             </div>
                         </div>
 
@@ -113,10 +113,10 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-3" style=" margin-top: 50px; ">
 
-                 
 
-                 <!-- 4 Image normal Config Form -->
-                 <div class=" ">
+
+                <!-- 4 Image normal Config Form -->
+                <div class=" ">
                     <label>4 Image:</label>
                     <!-- <input type="text" class="form-control  hidden" ng-model="addMe.type=4"> -->
                     <input type="text" class="form-control" placeholder="Enter Link For Image 1" ng-model="addMe.href">
@@ -127,6 +127,26 @@
                     <input type="text" class="form-control" placeholder="Enter url Image 3" ng-model="addMe.img3">
                     <input type="text" class="form-control" placeholder="Enter Link For Image 4" ng-model="addMe.href4">
                     <input type="text" class="form-control" placeholder="Enter url Image 4" ng-model="addMe.img4">
+                    <input type="file" name="pic" accept="image/*" />
+                    <button ng-click="addSelectedItem()" class="btn btn-success">Add</button>
+                </div>
+
+                <!-- Rectangular switch -->
+
+                <h3>2.1 <=======> 1.2</h3> 
+                <label class="switch">
+                    <input type="checkbox" ng-model="isChecked">
+                    <span class="slider"></span>
+                </label>
+                 <!-- 4 Image normal Config Form -->
+                 <div class=" "> 
+                    <!-- <input type="text" class="form-control  hidden" ng-model="addMe.type=4"> -->
+                    <input type="text" class="form-control" placeholder="Enter Link For Image 1" ng-model="addMe.href5">
+                    <input type="text" class="form-control" placeholder="Enter url Image 1" ng-model="addMe.img5">
+                    <input type="text" class="form-control" placeholder="Enter Link For Image 2" ng-model="addMe.href6">
+                    <input type="text" class="form-control" placeholder="Enter url Image 2" ng-model="addMe.img6">
+                    <input type="text" class="form-control" placeholder="Enter Link For Image 3" ng-model="addMe.href7">
+                    <input type="text" class="form-control" placeholder="Enter url Image 3" ng-model="addMe.img7"> 
                     <input type="file" name="pic" accept="image/*" />
                     <button ng-click="addSelectedItem()" class="btn btn-success">Add</button>
                 </div>
